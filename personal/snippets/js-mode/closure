@@ -1,0 +1,6 @@
+# name: closure
+# key: closure
+# --
+(function() {
+	$0
+})();

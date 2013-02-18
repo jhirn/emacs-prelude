@@ -1,0 +1,6 @@
+# name: CDATA
+# key: cdata
+# --
+//<![CDATA[
+	$1
+//]]>

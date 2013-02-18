@@ -1,0 +1,14 @@
+# name: class
+# key: class
+# --
+var $1 = (function(){
+	function $1() {
+
+	}
+
+	$1.prototype.method = function() {
+
+	};
+
+	return $1;
+})();

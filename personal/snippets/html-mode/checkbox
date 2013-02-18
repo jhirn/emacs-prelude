@@ -1,0 +1,4 @@
+# name: checkbox
+# key: checkbox
+# --
+<input type="checkbox" name="$1"${2: id="$3"}${0: class="checkbox"}/>
