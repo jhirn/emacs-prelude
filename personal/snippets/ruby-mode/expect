@@ -1,0 +1,4 @@
+# name: expect
+# key: expect
+# --
+expect($1).${2:to} ${3:eq($0)}
