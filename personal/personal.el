@@ -40,7 +40,7 @@
 
 ;Look and feel
 (powerline-default)
-;(global-rainbow-delimiters-mode t)
+(global-rainbow-delimiters-mode t)
 (setq custom-theme-directory (concat prelude-personal-dir "/themes"))
 (load-theme 'neopolitan t)
 (set-transparancy '(87 76))
@@ -73,6 +73,7 @@
 ;; Captain hooks
 (add-hook 'before-save-hook 'whitespace-cleanup nil t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'scss-mode (lambda () (rainbow-mode)))
 
 
 (add-hook 'clojure-mode-hook          (lambda () (paredit-mode t)))
