@@ -38,7 +38,7 @@
       (set-frame-parameter nil 'alpha '(100 100))
     (set-frame-parameter nil 'alpha '(81 70))))
 
-(powerline-default-theme)                                     ;Look and feel
+(powerline-default-theme) 
 (global-rainbow-delimiters-mode t)
 (setq custom-theme-directory (concat prelude-personal-dir "/themes"))
 (if window-system
