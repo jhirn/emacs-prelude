@@ -19,18 +19,20 @@
 (setq rspec-spec-command "rspec" rspec-use-rake-flag nil) ;rspec2
 
 
-(defun rspec-compile (a-file-or-dir &optional opts)
-  "Runs a compile for the specified file or diretory with the specified opts"
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "r") (eval `(lambda () (interactive)
-                                       (rspec-from-directory ,default-directory
-                                                             (rspec-compile ,a-file-or-dir (quote ,opts))))))
-    (global-set-key rspec-key-command-prefix map))
+;; defined here to deal with possible regression in 24.3.50
+;; (defun rspec-compile (a-file-or-dir &optional opts)
+;;   "Runs a compile for the specified file or diretory with the specified opts"
+;;   (let ((map (make-sparse-keymap)))
+;;     (define-key map (kbd "r") (eval `(lambda () (interactive)
+;;                                        (rspec-from-directory ,default-directory
+;;                                                              (rspec-compile ,a-file-or-dir (quote ,opts))))))
+;;     (global-set-key rspec-key-command-prefix map))
 
-  (if rspec-use-rvm
-      (rvm-activate-corresponding-ruby))
-  (rspec-from-project-root
-   (let ((compilation-scroll-output t))
-     (compile (mapconcat 'identity `(,(rspec-runner) ,a-file-or-dir
-                                     ,(rspec-runner-options opts)) " ")
-              'rspec-compilation-mode))))
+;;   (if rspec-use-rvm
+;;       (rvm-activate-corresponding-ruby))
+;;   (rspec-from-project-root
+;;    (let ((compilation-scroll-output t))
+;;      (compile (mapconcat 'identity `(,(rspec-runner)
+;;                                      ,(rspec-runner-options opts)
+;;                                      ,a-file-or-dir) " ")
+;;               'rspec-compilation-mode))))

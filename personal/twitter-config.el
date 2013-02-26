@@ -12,3 +12,4 @@
 
 (setq twittering-icon-mode 1)
 (setq twittering-timer-interval 90)
+(setq twittering-use-master-password t)
