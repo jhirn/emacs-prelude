@@ -38,15 +38,18 @@
       (set-frame-parameter nil 'alpha '(100 100))
     (set-frame-parameter nil 'alpha '(81 70))))
 
-;Look and feel
+                                        ;Look and feel
 (powerline-default)
 (global-rainbow-delimiters-mode t)
 (setq custom-theme-directory (concat prelude-personal-dir "/themes"))
-(load-theme 'neopolitan t)
-(set-transparancy '(87 76))
-(add-to-list 'default-frame-alist '(width . 100))
-(add-to-list 'default-frame-alist '(height . 55))
-(menu-bar-mode 1)
+(if window-system
+    (progn
+        (load-theme 'neopolitan t)
+        (set-transparancy '(87 76))
+        (add-to-list 'default-frame-alist '(width . 100))
+        (add-to-list 'default-frame-alist '(height . 55))
+        (menu-bar-mode 1)))
+
 (scroll-bar-mode -1)
 (set-fringe-mode 0)
 (global-linum-mode 1)
