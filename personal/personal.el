@@ -57,7 +57,7 @@
 (setq linum-format " %d ")
 (blink-cursor-mode t)
 (set-default 'cursor-type 'bar)
-
+(global-visual-line-mode t)
 ;;More sets
 (setq prelude-whitespace nil)
 (setq ispell-dictionary "en")
