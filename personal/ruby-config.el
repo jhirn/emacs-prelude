@@ -1,5 +1,4 @@
 ;; Ruby
-
 (defun create-tags-rails (dir-name)
   "Create tags file."
   (interactive "DDirectory: ")
