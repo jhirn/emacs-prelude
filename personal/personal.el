@@ -43,11 +43,11 @@
 (setq custom-theme-directory (concat prelude-personal-dir "/themes"))
 (if window-system
     (progn
-        (load-theme 'neopolitan t)
-        (set-transparancy '(87 76))
-        (add-to-list 'default-frame-alist '(width . 100))
-        (add-to-list 'default-frame-alist '(height . 55))
-        (menu-bar-mode 1)))
+      (load-theme 'neopolitan t)
+      (set-transparancy '(87 76))
+      (add-to-list 'default-frame-alist '(width . 100))
+      (add-to-list 'default-frame-alist '(height . 55))
+      (menu-bar-mode 1)))
 
 (scroll-bar-mode -1)
 (set-fringe-mode 0)
@@ -86,7 +86,7 @@
 
 ;;Smexy
 (smex-initialize)
-(smex-auto-update 30)
+                                        ;(smex-auto-update 30)
 (setq smex-show-unbound-commands t)
 
 
@@ -97,10 +97,22 @@
 (global-set-key (kbd "C-\\") 'switch-to-previous-buffer)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-c C-t") 'toggle-transparency)
+(global-set-key [C-backspace] 'backward-kill-word)
 
-;(setq yas/trigger-key "C-c .")
+                                        ;(setq yas/trigger-key "C-c .")
 
 (setq markdown-css-path (concat prelude-dir "personal/Github.css"))
 (setq ring-bell-function (lambda () (message "*beep*")))
 (setq explicit-bash-args '("--noediting" "--login" "-i"))
 (setq prelude-guru nil)
+
+(eval-after-load 'js
+  (font-lock-add-keywords
+   'js-mode `(("\\(function *\\)("
+               (0 (progn (compose-region (match-beginning 1)
+                                         (match-end 1) "\u0192")
+                         nil)))
+              ("\\(this\\)"
+               (0 (progn (compose-region (match-beginning 1)
+                                         (match-end 1) "\u0288")
+                         nil))))))
