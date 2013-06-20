@@ -43,6 +43,7 @@
 (setq custom-theme-directory (concat prelude-personal-dir "/themes"))
 (if window-system
     (progn
+      (global-unset-key "\C-z")
       (load-theme 'neopolitan t)
       (set-transparancy '(87 76))
       (add-to-list 'default-frame-alist '(width . 100))
