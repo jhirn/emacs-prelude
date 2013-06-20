@@ -1,3 +1,5 @@
+
+
 ;; Ruby
 (defun create-tags-rails (dir-name)
   "Create tags file."
@@ -14,7 +16,6 @@
 (add-to-list 'auto-mode-alist '("\\.irbrc" . ruby-mode))
 
 (setq ruby-deep-indent-paren nil)
-
 
 (require 'rspec-mode)
 (define-key rspec-mode-verifible-keymap (kbd "s") 'rspec-verify-single)
