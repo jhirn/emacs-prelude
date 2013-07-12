@@ -21,8 +21,5 @@
     (when (not (package-installed-p p))
       (package-install p))))
 
-
-(not  (package-installed-p 'ac-slime))
-
 (install-my-packages)
 ;;end package management
