@@ -38,7 +38,7 @@
       (set-frame-parameter nil 'alpha '(100 100))
     (set-frame-parameter nil 'alpha '(81 70))))
 
-(powerline-default-theme) 
+(powerline-default-theme)
 (global-rainbow-delimiters-mode t)
 (setq custom-theme-directory (concat prelude-personal-dir "/themes"))
 (if window-system
@@ -80,11 +80,14 @@
 (add-hook 'scss-mode (lambda () (rainbow-mode)))
 
 
-(add-hook 'clojure-mode-hook          (lambda () (paredit-mode t)))
-(add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode t)))
-(add-hook 'lisp-mode-hook             (lambda () (paredit-mode t)))
-(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode t)))
-(add-hook 'scheme-mode-hook           (lambda () (paredit-mode t)))
+;(add-hook 'clojure-mode-hook          (lambda () (paredit-mode t)))
+;(add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode t)))
+;(add-hook 'lisp-mode-hook             (lambda () (paredit-mode t)))
+;(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode t)))
+;(add-hook 'scheme-mode-hook           (lambda () (paredit-mode t)))
+
+
+
 
 ;;Smexy
 (smex-initialize)
