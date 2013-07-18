@@ -127,3 +127,10 @@
                (0 (progn (compose-region (match-beginning 1)
                                          (match-end 1) "\u0288")
                          nil))))))
+
+(eval-after-load 'flycheck
+  '(setq flycheck-checkers
+         (delq 'emacs-lisp-checkdoc flycheck-checkers)))
+
+(require 'window-number)
+(window-number-meta-mode 1)
