@@ -11,10 +11,10 @@
                      powerline
                      smex
                      twittering-mode
-                     rainbow-delimiters
                      pomodoro
                      tidy
-                     bundler))
+                     bundler
+                     window-number))
 
 (defun install-my-packages ()
   (dolist (p my-packages)
