@@ -14,7 +14,8 @@
                      pomodoro
                      tidy
                      bundler
-                     window-number))
+                     window-number
+                     popwin))
 
 (defun install-my-packages ()
   (dolist (p my-packages)
