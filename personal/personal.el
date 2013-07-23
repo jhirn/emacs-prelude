@@ -69,6 +69,7 @@
       (add-to-list 'default-frame-alist '(width . 100))
       (add-to-list 'default-frame-alist '(height . 55))
       (menu-bar-mode 1)))
+(disable-theme 'zenburn)
 
 (scroll-bar-mode -1)
 (set-fringe-mode 0)
@@ -98,16 +99,6 @@
 (add-hook 'before-save-hook 'whitespace-cleanup nil t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'scss-mode (lambda () (rainbow-mode)))
-
-
-;(add-hook 'clojure-mode-hook          (lambda () (paredit-mode t)))
-;(add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode t)))
-;(add-hook 'lisp-mode-hook             (lambda () (paredit-mode t)))
-;(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode t)))
-;(add-hook 'scheme-mode-hook           (lambda () (paredit-mode t)))
-
-
-
 
 ;;Smexy
 (smex-initialize)
