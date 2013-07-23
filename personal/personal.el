@@ -6,6 +6,26 @@
  mouse-wheel-progressive-speed nil)
 
 ;;Some functions
+
+(defmacro preserving-column (&rest body)
+  `(let (c (current-column))
+     ,@body
+     (move-to-column c)))
+
+(defun transpose-preserving-row (direction)
+  (preserving-column
+   (forward-line 1)
+   (transpose-lines direction)
+   (forward-line -1)))
+
+(defun move-line-up ()
+  (interactive)
+  (transpose-preserving-row -1))
+
+(defun move-line-down ()
+  (interactive)
+  (transpose-preserving-row 1))
+
 (defun switch-to-previous-buffer ()
   "toggle between this and previous buffer"
   (interactive)
@@ -100,6 +120,8 @@
 (global-set-key (kbd "C-\\") 'switch-to-previous-buffer)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-c C-t") 'toggle-transparency)
+(global-set-key (kbd "<M-C-up>") 'move-line-up)
+(global-set-key (kbd "<M-C-down>") 'move-line-down)
 (global-set-key [C-backspace] 'backward-kill-word)
 
                                         ;(setq yas/trigger-key "C-c .")
