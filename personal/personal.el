@@ -84,7 +84,6 @@
 (setq prelude-whitespace nil)
 (setq ispell-dictionary "en")
 (setq default-tab-width 2)
-(setq js-indent-level 2) ;nerd rage I must set this separate from 'default-tab-width
 (setq-default show-trailing-whitespace nil)
 
 (setq vc-suppress-confirm t)
@@ -94,15 +93,12 @@
 
 (setq scss-compile-at-save nil)
 (setq css-indent-offset 2)
+
 (add-to-list 'auto-mode-alist '("\\.jst" . html-mode))
 ;; Captain hooks
-(add-hook 'before-save-hook 'whitespace-cleanup nil t)
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-(add-hook 'scss-mode (lambda () (rainbow-mode)))
 
 ;;Smexy
 (smex-initialize)
-                                        ;(smex-auto-update 30)
 (setq smex-show-unbound-commands t)
 
 (global-set-key (kbd "M-x") 'smex)
@@ -121,25 +117,6 @@
 (setq ring-bell-function (lambda () (message "*beep*")))
 (setq explicit-bash-args '("--noediting" "--login" "-i"))
 (setq prelude-guru nil)
-
-(eval-after-load 'js
-  (font-lock-add-keywords
-   'js-mode `(("\\(function *\\)[(|[[:space:]]]?"
-               (0 (progn (compose-region (match-beginning 1)
-                                         (match-end 1) "\u0192")
-                         nil)))
-              ("[[:space:]]\\(var\\)[[:space:]]"
-               (0 (progn (compose-region (match-beginning 1)
-                                         (match-end 1) "\u028B ")
-                         nil)))
-              ("[[:space:]]\\(return\\)[[:space:]]"
-               (0 (progn (compose-region (match-beginning 1)
-                                         (match-end 1) "\u1D3F ")
-                         nil)))
-              ("\\(this\\)"
-               (0 (progn (compose-region (match-beginning 1)
-                                         (match-end 1) "\u0288")
-                         nil))))))
 
 (eval-after-load 'flycheck
   '(setq flycheck-checkers
@@ -160,3 +137,13 @@
   (ansi-color-apply-on-region (point-min) (point-max))
   (toggle-read-only))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+
+(add-hook 'scss-mode (lambda () (rainbow-mode)))
+(add-hook 'before-save-hook 'whitespace-cleanup nil t)
+(add-hook 'before-save-hook
+          (progn
+            (lambda ()
+              (when buffer-file-name
+                (let ((dir (file-name-directory buffer-file-name)))
+                  (when (not (file-exists-p dir))
+                    (make-directory dir t)))))))
