@@ -83,7 +83,7 @@
 ;;More sets
 (setq prelude-whitespace nil)
 (setq ispell-dictionary "en")
-(setq default-tab-width 2)
+(setq tab-width 2)
 (setq-default show-trailing-whitespace nil)
 
 (setq vc-suppress-confirm t)
@@ -131,11 +131,12 @@
       sp-highlight-wrap-overlay nil
       sp-highlight-wrap-tag-overlay nil)
 
+
 (require 'ansi-color)
 (defun colorize-compilation-buffer ()
   (read-only-mode)
   (ansi-color-apply-on-region (point-min) (point-max))
-  (toggle-read-only))
+  (read-only-mode))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
 (add-hook 'scss-mode (lambda () (rainbow-mode)))
