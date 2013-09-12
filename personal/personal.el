@@ -113,6 +113,7 @@
 
                                         ;(setq yas/trigger-key "C-c .")
 
+(require 'prelude-editor)
 (setq markdown-css-path (concat prelude-dir "personal/Github.css"))
 (setq ring-bell-function (lambda () (message "*beep*")))
 (setq explicit-bash-args '("--noediting" "--login" "-i"))
@@ -125,9 +126,9 @@
 (require 'window-number)
 (window-number-meta-mode 1)
 
-(require 'paren)
+(require 'smartparens)
 ; Turn off smartparens highlighting
-(smartparens-strict-mode)
+(smartparens-global-strict-mode)
 (setq sp-highlight-pair-overlay nil
       sp-highlight-wrap-overlay nil
       sp-highlight-wrap-tag-overlay nil
