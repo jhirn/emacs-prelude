@@ -127,9 +127,13 @@
 
 (require 'paren)
 ; Turn off smartparens highlighting
+(smartparens-strict-mode)
 (setq sp-highlight-pair-overlay nil
       sp-highlight-wrap-overlay nil
-      sp-highlight-wrap-tag-overlay nil)
+      sp-highlight-wrap-tag-overlay nil
+      sp-autoescape-string-quote nil
+      sp-autoskip-closing-pair 'always)
+
 
 
 (require 'ansi-color)
