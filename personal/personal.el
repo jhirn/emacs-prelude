@@ -58,6 +58,11 @@
       (set-frame-parameter nil 'alpha '(100 100))
     (set-frame-parameter nil 'alpha '(81 70))))
 
+
+(require 'prelude-editor)
+(setq prelude-guru nil)
+(setq prelude-whitespace nil)
+
 (powerline-default-theme)
 (global-rainbow-delimiters-mode t)
 (setq custom-theme-directory (concat prelude-personal-dir "/themes"))
@@ -73,6 +78,7 @@
 
 (scroll-bar-mode -1)
 (set-fringe-mode 0)
+(require 'linum)
 (global-linum-mode 1)
 (global-hl-line-mode -1)
 (setq linum-format " %d ")
@@ -80,24 +86,25 @@
 (set-default 'cursor-type 'bar)
 (global-visual-line-mode t)
 
-;;More sets
-(setq prelude-whitespace nil)
+
+(require 'ispell)
 (setq ispell-dictionary "en")
 (setq tab-width 2)
 (setq-default show-trailing-whitespace nil)
-
+(require 'vc)
 (setq vc-suppress-confirm t)
 (setq vc-follow-symlinks t)
+
+
 (setq exec-path (cons "/usr/local/bin" exec-path))
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 
-(setq scss-compile-at-save nil)
-(setq css-indent-offset 2)
 
 (add-to-list 'auto-mode-alist '("\\.jst" . html-mode))
 ;; Captain hooks
 
 ;;Smexy
+(require 'smex)
 (smex-initialize)
 (setq smex-show-unbound-commands t)
 
@@ -111,30 +118,20 @@
 (global-set-key (kbd "<M-C-down>") 'move-line-down)
 (global-set-key [C-backspace] 'backward-kill-word)
 
-                                        ;(setq yas/trigger-key "C-c .")
 
-(require 'prelude-editor)
-(setq markdown-css-path (concat prelude-dir "personal/Github.css"))
 (setq ring-bell-function (lambda () (message "*beep*")))
-(setq explicit-bash-args '("--noediting" "--login" "-i"))
-(setq prelude-guru nil)
 
+(require 'shell)
+(setq explicit-bash-args '("--noediting" "--login" "-i"))
+
+(require 'markdown-mode)
+(setq markdown-css-path (concat prelude-dir "personal/Github.css"))
 (eval-after-load 'flycheck
   '(setq flycheck-checkers
          (delq 'emacs-lisp-checkdoc flycheck-checkers)))
 
 (require 'window-number)
 (window-number-meta-mode 1)
-
-(require 'smartparens)
-; Turn off smartparens highlighting
-(smartparens-global-strict-mode)
-(setq sp-highlight-pair-overlay nil
-      sp-highlight-wrap-overlay nil
-      sp-highlight-wrap-tag-overlay nil
-      sp-autoescape-string-quote nil
-      sp-autoskip-closing-pair 'always)
-
 
 
 (require 'ansi-color)
