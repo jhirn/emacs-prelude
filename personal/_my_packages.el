@@ -15,7 +15,8 @@
                      tidy
                      bundler
                      window-number
-                     popwin))
+                     popwin
+                     nrepl-ritz))
 
 (defun install-my-packages ()
   (dolist (p my-packages)
