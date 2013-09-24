@@ -36,3 +36,9 @@
 (ac-set-trigger-key "TAB")
 (define-key ac-completing-map "\t" 'ac-complete)
 (define-key ac-completing-map "\r" 'ac-complete)
+
+
+(require 'ac-nrepl)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'nrepl-mode))
+(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)

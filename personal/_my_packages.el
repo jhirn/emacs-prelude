@@ -5,8 +5,11 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-(setq  my-packages '(auto-complete
-                     bitlbee
+(setq  my-packages '(sml-mode
+                     auto-complete
+                     ac-nrepl
+                     ac-js2
+                     nrepl-ritz
                      rspec-mode
                      powerline
                      smex
@@ -15,8 +18,7 @@
                      tidy
                      bundler
                      window-number
-                     popwin
-                     nrepl-ritz))
+                     popwin))
 
 (defun install-my-packages ()
   (dolist (p my-packages)

@@ -1,6 +1,6 @@
 (require 'smartparens)
 
-(smartparens-global-strict-mode)
+;(smartparens-global-strict-mode)
 (setq sp-highlight-pair-overlay nil
       sp-highlight-wrap-overlay nil
       sp-highlight-wrap-tag-overlay nil
