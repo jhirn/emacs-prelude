@@ -79,29 +79,27 @@ Used and created by Dayton Nolan.")
  ;; linum-mode
  `(linum ((t (:foreground ,"#8f8b88" :background ,"#271F19"))))
 
- ;; rainbow-delimiters
- ;; `(rainbow-delimiters-depth-1-face ((t (:foreground ,"#FFFFFF"))))
- ;; `(rainbow-delimiters-depth-2-face ((t (:foreground ,"#FFFFFF"))))
- ;; `(rainbow-delimiters-depth-3-face ((t (:foreground ,"#FFFFFF"))))
- ;; `(rainbow-delimiters-depth-4-face ((t (:foreground ,"#FFFFFF"))))
- ;; `(rainbow-delimiters-depth-5-face ((t (:foreground ,"#FFFFFF"))))
- ;; `(rainbow-delimiters-depth-6-face ((t (:foreground ,"#FFFFFF"))))
- ;; `(rainbow-delimiters-depth-7-face ((t (:foreground ,"#FFFFFF"))))
- ;; `(rainbow-delimiters-depth-8-face ((t (:foreground ,"#FFFFFF"))))
- ;; `(rainbow-delimiters-depth-9-face ((t (:foreground ,"#FFFFFF"))))
- ;; `(rainbow-delimiters-depth-10-face ((t (:foreground ,"#FFFFFF"))))
- ;; `(rainbow-delimiters-depth-11-face ((t (:foreground ,"#FFFFFF"))))
- ;; `(rainbow-delimiters-depth-12-face ((t (:foreground ,"#FFFFFF"))))
-
+ `(rainbow-delimiters-depth-1-face ((t (:foreground ,"cyan"))))
+ `(rainbow-delimiters-depth-2-face ((t (:foreground ,"yellow"))))
+ `(rainbow-delimiters-depth-3-face ((t (:foreground ,"blue"))))
+ `(rainbow-delimiters-depth-4-face ((t (:foreground ,"orange"))))
+ `(rainbow-delimiters-depth-6-face ((t (:foreground ,"yellow"))))
+ `(rainbow-delimiters-depth-7-face ((t (:foreground ,"blue"))))
+ `(rainbow-delimiters-depth-8-face ((t (:foreground ,"orange"))))
+ `(rainbow-delimiters-depth-9-face ((t (:foreground ,"green"))))
+ `(rainbow-delimiters-depth-10-face ((t (:foreground ,"yellow"))))
+ `(rainbow-delimiters-depth-11-face ((t (:foreground ,"blue"))))
+ `(rainbow-delimiters-depth-12-face ((t (:foreground ,"orange"))))
+ 
  '(region ((t (:background "#253B76"))))
 
  '(show-paren-match ((t (:background "#271F19"))))
  '(show-paren-mismatch ((t (:background "#800000" :foreground "#FFFFFF"))))
 
  ;; faces used by isearch
- ; `(isearch ((t (:foreground ,"#61CE3C" :background ,"#271F19"))))
- ; `(isearch-fail ((t (:foreground ,"#FFFFFF" :background ,"#800000"))))
- ; `(lazy-highlight ((t (:foreground ,"#61CE3C" :background ,"#271F19"))))
+                                        ; `(isearch ((t (:foreground ,"#61CE3C" :background ,"#271F19"))))
+                                        ; `(isearch-fail ((t (:foreground ,"#FFFFFF" :background ,"#800000"))))
+                                        ; `(lazy-highlight ((t (:foreground ,"#61CE3C" :background ,"#271F19"))))
 
  '(window-number-face ((t (:foreground "red" :weight bold)))))
 
