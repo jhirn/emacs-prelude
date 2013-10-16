@@ -1,9 +1,11 @@
 (require 'smartparens)
 
-(setq sp-highlight-wrap-overlay t
-      sp-autoescape-string-quote nil
-      sp-autoskip-closing-pair 'always)
 
+(setq
+ sp-highlight-wrap-overlay nil
+ sp-autoescape-string-quote nil
+ sp-autoskip-closing-pair 'always
+ blink-matching-paren t)
 
 (show-smartparens-global-mode t)
 

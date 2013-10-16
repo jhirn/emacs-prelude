@@ -8,9 +8,13 @@
 ;;                    (format "You have %d new tweet%s"
 ;;                            n (if (> n 1) "s" "")))))
 
+
 ;; (add-hook 'twittering-new-tweets-hook 'lib-notify-new-tweet)
+
+;;(add-hook 'twittering-new-tweets-hook 'lib-notify-new-tweet)(setq twittering-use-master-password t)
 
 (setq twittering-icon-mode 1)
 (setq twittering-timer-interval 90)
 (setq twittering-use-master-password t)
+
 (setq twittering-tinyurl-service 'is.gd)

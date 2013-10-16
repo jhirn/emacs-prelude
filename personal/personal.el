@@ -58,7 +58,7 @@
       (set-frame-parameter nil 'alpha '(100 100))
     (set-frame-parameter nil 'alpha '(81 70))))
 
-;(show-paren-mode nil)
+                                        ;(show-paren-mode nil)
 (setq scheme-program-name "petite")
 
 (require 'prelude-editor)
@@ -73,7 +73,7 @@
       (global-unset-key "\C-z")
       (load-theme 'neopolitan t)
       (set-transparancy '(87 76))
- ;     (add-to-list 'default-frame-alist '(width . 100))
+                                        ;     (add-to-list 'default-frame-alist '(width . 100))
 ;      (add-to-list 'default-frame-alist '(height . 55))
       (menu-bar-mode 1)))
 (disable-theme 'zenburn)
