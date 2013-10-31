@@ -56,7 +56,7 @@
        (or (cadr (frame-parameter nil 'alpha)) 100)
        100)
       (set-frame-parameter nil 'alpha '(100 100))
-    (set-frame-parameter nil 'alpha '(81 70))))
+    (set-frame-parameter nil 'alpha '(82 70))))
 
                                         ;(show-paren-mode nil)
 (setq scheme-program-name "petite")
@@ -87,7 +87,6 @@
 (blink-cursor-mode t)
 (set-default 'cursor-type 'bar)
 (global-visual-line-mode t)
-
 
 (require 'ispell)
 (setq ispell-dictionary "en")
@@ -152,3 +151,8 @@
                 (let ((dir (file-name-directory buffer-file-name)))
                   (when (not (file-exists-p dir))
                     (make-directory dir t)))))))
+
+;;#omg (yes hashtag #omg)
+(autoload 'asp-mode "asp-mode")
+(setq auto-mode-alist 
+      (cons '("\\.asp\\'" . asp-mode) auto-mode-alist))
