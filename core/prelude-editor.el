@@ -110,6 +110,10 @@ Will only occur if prelude-whitespace is also enabled."
 
 (show-smartparens-global-mode +1)
 
+(define-key prog-mode-map (kbd "M-(") (lambda (&optional arg) (interactive "P") (sp-wrap-with-pair "(")))
+(define-key prog-mode-map (kbd "M-[") (lambda (&optional arg) (interactive "P") (sp-wrap-with-pair "[")))
+(define-key prog-mode-map (kbd "M-\"") (lambda (&optional arg) (interactive "P") (sp-wrap-with-pair "\"")))
+
 ;; disable annoying blink-matching-paren
 (setq blink-matching-paren nil)
 
@@ -289,20 +293,6 @@ The body of the advice is in BODY."
 (require 'anzu)
 (diminish 'anzu-mode)
 (global-anzu-mode)
-
-(require 'helm-misc)
-(require 'helm-projectile)
-
-(defun helm-prelude ()
-  "Preconfigured `helm'."
-  (interactive)
-  (condition-case nil
-    (if (projectile-project-root)
-        (helm-projectile)
-      ;; otherwise fallback to helm-mini
-      (helm-mini))
-    ;; fall back to helm mini if an error occurs (usually in projectile-project-root)
-    (error (helm-mini))))
 
 ;; shorter aliases for ack-and-a-half commands
 (defalias 'ack 'ack-and-a-half)

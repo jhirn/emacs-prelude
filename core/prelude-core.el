@@ -405,7 +405,6 @@ Doesn't mess with special buffers."
     "Press <jj> quickly to jump to the beginning of a visible word."
     "Press <jk> quickly to jump to a visible character."
     "Press <jl> quickly to jump to a visible line."
-    "Press <C-c h> to navigate a project in Helm."
     "Press <C-c g> to search in Google."
     "Press <C-c G> to search in GitHub."
     "Press <C-c y> to search in YouTube."
@@ -450,10 +449,14 @@ Doesn't mess with special buffers."
   (exchange-point-and-mark)
   (deactivate-mark nil))
 
+(require 'epl)
+
 (defun prelude-update ()
   "Update Prelude to its latest version."
   (interactive)
   (when (y-or-n-p "Do you want to update Prelude? ")
+    (message "Updating installed packages...")
+    (epl-upgrade)
     (message "Updating Prelude...")
     (cd prelude-dir)
     (shell-command "git pull")
