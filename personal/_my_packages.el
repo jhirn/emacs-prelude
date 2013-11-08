@@ -9,7 +9,7 @@
                      auto-complete
                      ac-nrepl
                      ac-js2
-                     nrepl-ritz
+;;                     nrepl-ritz
                      rspec-mode
                      powerline
                      smex
