@@ -1,4 +1,5 @@
 ;;Apple, think different
+
 (setq
  ns-command-modifier   'meta            ; Apple/Command key is Meta
  ns-alternate-modifier 'super           ; Option is the Mac Option key
@@ -118,7 +119,6 @@
 (global-set-key (kbd "<M-C-up>") 'move-line-up)
 (global-set-key (kbd "<M-C-down>") 'move-line-down)
 (global-set-key [C-backspace] 'backward-kill-word)
-
 
 (setq ring-bell-function (lambda () (message "*beep*")))
 
