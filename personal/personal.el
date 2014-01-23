@@ -143,7 +143,7 @@
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
 (add-hook 'scss-mode (lambda () (rainbow-mode)))
-(add-hook 'before-save-hook 'whitespace-cleanup nil t)
+(add-hook 'before-save-hook 'whitespace-cleanup)
 (add-hook 'before-save-hook
           (progn
             (lambda ()
@@ -154,5 +154,5 @@
 
 ;;#omg (yes hashtag #omg)
 (autoload 'asp-mode "asp-mode")
-(setq auto-mode-alist 
+(setq auto-mode-alist
       (cons '("\\.asp\\'" . asp-mode) auto-mode-alist))

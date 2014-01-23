@@ -5,9 +5,10 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-(setq  my-packages '(sml-mode
+(defvar my-packages '(sml-mode
                      auto-complete
                      ac-nrepl
+;;                     ac-nrepl-compliment
                      ac-js2
 ;;                     nrepl-ritz
                      rspec-mode
@@ -17,6 +18,7 @@
                      pomodoro
                      tidy
                      bundler
+                     rbenv
                      window-number
                      popwin))
 
