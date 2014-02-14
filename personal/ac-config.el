@@ -7,10 +7,11 @@
 ;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/auto-complete/dict")
 
 (global-auto-complete-mode t)
-(setq ac-auto-show-menu 0.4)
+(setq ac-auto-show-menu 1)
 (setq ac-dwim t)
 (setq ac-use-menu-map t)
-(setq ac-quick-help-delay 0)
+(setq ac-quick-help-delay 3)
+
 (setq ac-quick-help-height 60)
 
 (set-default 'ac-sources
