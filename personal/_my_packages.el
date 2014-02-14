@@ -2,30 +2,36 @@
 (require 'package)
 (package-initialize)
 
-(when (not package-archive-contents)
+(unless package-archive-contents
   (package-refresh-contents))
 
 (defvar my-packages '(sml-mode
-                     auto-complete
-                     ac-nrepl
-;;                     ac-nrepl-compliment
-                     ac-js2
-;;                     nrepl-ritz
-                     rspec-mode
-                     powerline
-                     smex
-                     twittering-mode
-                     pomodoro
-                     tidy
-                     bundler
-                     rbenv
-                     window-number
-                     popwin))
+                      auto-complete
+                      ac-nrepl
+                      ac-js2
+                      rspec-mode
+                      powerline
+                      smex
+                      twittering-mode
+                      pomodoro
+                      tidy
+                      bundler
+                      rbenv
+                      window-number
+                      popwin
+                      (org (20140210))))
+
+(defun install-package (package min-version)
+  (unless (package-installed-p package min-version)
+    (package-install package)))
 
 (defun install-my-packages ()
   (dolist (p my-packages)
-    (when (not (package-installed-p p))
-      (package-install p))))
+    (if (listp p)
+        (let ((pkg (car p))
+              (min-version (cadr p)))
+          (install-package pkg min-version))
+      (install-package p nil))))
 
 (install-my-packages)
 ;;end package management
