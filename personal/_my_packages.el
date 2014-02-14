@@ -5,7 +5,8 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-(defvar my-packages '(sml-mode
+(defvar my-packages '(flymake-easy
+                      sml-mode
                       auto-complete
                       ac-nrepl
                       ac-js2
