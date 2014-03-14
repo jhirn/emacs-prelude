@@ -8,12 +8,20 @@
 
 ;;Some functions
 
+(defun create-shell ()
+  "creates a shell with a given name"
+  (interactive);; "Prompt\n shell name:")
+  (let ((shell-name (read-string "shell name: " nil)))
+    (shell (concat "*" shell-name "*"))))
+
 (defmacro preserving-column (&rest body)
+  "Preserve the column of the mark when moving text."
   `(let (c (current-column))
      ,@body
      (move-to-column c)))
 
 (defun transpose-preserving-row (direction)
+  "Transpose a column in a given direction keep mark on that line."
   (preserving-column
    (forward-line 1)
    (transpose-lines direction)
@@ -125,7 +133,14 @@
 (setq ring-bell-function (lambda () (message "*beep*")))
 
 (require 'shell)
-(setq explicit-bash-args '("--noediting" "--login" "-i"))
+(setq explicit-shell-file-name "bash")
+(setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash --login -i"))
+;(setq comint-process-echoes t)
+
+;(add-to-list 'ac-modes 'shell-mode)
+;(add-hook 'shell-mode-hook 'ac-rlc-setup-sources)
+
+;(setq explicit-bash-args '("--noediting" "--login" "-i"))
 
 (require 'markdown-mode)
 (setq markdown-css-path (concat prelude-dir "personal/Github.css"))
