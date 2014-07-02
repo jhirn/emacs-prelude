@@ -135,6 +135,9 @@
 (require 'shell)
 (setq explicit-shell-file-name "bash")
 (setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash --login -i"))
+(setq auto-mode-alist
+      (cons '("\\.bats\'" . sh-mode) auto-mode-alist))
+
 ;(setq comint-process-echoes t)
 
 ;(add-to-list 'ac-modes 'shell-mode)
@@ -171,5 +174,7 @@
 
 ;;#omg (yes hashtag #omg)
 (autoload 'asp-mode "asp-mode")
-(setq auto-mode-alist
-      (cons '("\\.asp\\'" . asp-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.asp\\'" . asp-mode))
+
+
+(add-to-list 'auto-mode-alist '("\\.purs" . haskell-mode))

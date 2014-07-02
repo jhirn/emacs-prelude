@@ -1,3 +1,5 @@
+(require 'js2-mode)
+
 (setq js-indent-level 2) ;nerd rage I must set this separate from 'default-tab-width
 
 (eval-after-load 'js

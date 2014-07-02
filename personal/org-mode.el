@@ -9,3 +9,4 @@
   urlcolor=blue}")
 
 (custom-set-faces  '(org-link ((t (:foreground "dark gray")))))
+(setq org-export-backends '(ascii html icalendar latex man md))
