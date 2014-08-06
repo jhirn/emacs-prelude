@@ -86,7 +86,7 @@
 (disable-theme 'zenburn)
 
 (scroll-bar-mode -1)
-(set-fringe-mode 0)
+;;(set-fringe-mode 0)
 (require 'linum)
 (global-linum-mode 1)
 (global-hl-line-mode -1)
