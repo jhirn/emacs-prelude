@@ -1,4 +1,7 @@
 ;; Ruby
+(require 'ruby-mode)
+(require 'robe)
+
 (defun create-tags-rails (dir-name)
   "Create tags file."
   (interactive "DDirectory: ")
@@ -14,3 +17,5 @@
 (add-to-list 'auto-mode-alist '("\\.irbrc" . ruby-mode))
 
 (setq ruby-deep-indent-paren nil)
+
+(add-hook 'ruby-mode-hook 'robe-mode)

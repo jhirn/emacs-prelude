@@ -45,3 +45,6 @@
 
 (eval-after-load "cider"
   '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
+
+(require 'robe)
+(add-hook 'robe-mode-hook 'ac-robe-setup)
