@@ -20,7 +20,10 @@
                       rbenv
                       window-number
                       popwin
-                      (org (20140210))))
+                      (org (20140210))
+                      js2-mode
+                      js2-refactor
+                      discover-js2-refactor))
 
 (defun install-package (package min-version)
   (unless (package-installed-p package min-version)

@@ -54,7 +54,7 @@
   (set-font-size 160))
 
 (defun set-font-size (font-height)
-  (custom-set-faces `(default ((t (:height ,font-height :family "Monaco"))))))
+  (custom-set-faces `(default ((t (:height ,font-height :family "monaco"))))))
 
 (defun set-transparancy (transparancy-level)
   (set-frame-parameter (selected-frame) 'alpha transparancy-level))
@@ -67,12 +67,10 @@
       (set-frame-parameter nil 'alpha '(100 100))
     (set-frame-parameter nil 'alpha '(82 70))))
 
-                                        ;(show-paren-mode nil)
-(setq scheme-program-name "petite")
+;;(show-paren-mode nil)
 
-(require 'prelude-editor)
-(setq prelude-guru nil)
-(setq prelude-whitespace nil)
+
+(setq scheme-program-name "petite")
 
 (powerline-default-theme)
 (global-rainbow-delimiters-mode t)
@@ -83,7 +81,7 @@
       (load-theme 'neopolitan t)
       (set-transparancy '(87 76))
                                         ;     (add-to-list 'default-frame-alist '(width . 100))
-;      (add-to-list 'default-frame-alist '(height . 55))
+                                        ;      (add-to-list 'default-frame-alist '(height . 55))
       (menu-bar-mode 1)))
 (disable-theme 'zenburn)
 
@@ -96,6 +94,10 @@
 (blink-cursor-mode t)
 (set-default 'cursor-type 'bar)
 (global-visual-line-mode t)
+
+(require 'prelude-editor)
+(setq prelude-guru nil)
+(setq prelude-whitespace nil)
 
 (require 'ispell)
 (setq ispell-dictionary "en")
@@ -138,15 +140,16 @@
 (setq auto-mode-alist
       (cons '("\\.bats\'" . sh-mode) auto-mode-alist))
 
-;(setq comint-process-echoes t)
+;;(setq comint-process-echoes t)
 
-;(add-to-list 'ac-modes 'shell-mode)
-;(add-hook 'shell-mode-hook 'ac-rlc-setup-sources)
+;;(add-to-list 'ac-modes 'shell-mode)
+;;(add-hook 'shell-mode-hook 'ac-rlc-setup-sources)
 
-;(setq explicit-bash-args '("--noediting" "--login" "-i"))
+;;(setq explicit-bash-args '("--noediting" "--login" "-i"))
 
-(require 'markdown-mode)
-(setq markdown-css-path (concat prelude-dir "personal/Github.css"))
+;;(require 'markdown-mode)
+;;(setq markdown-css-path (concat prelude-dir "personal/Github.css"))
+
 (eval-after-load 'flycheck
   '(setq flycheck-checkers
          (delq 'emacs-lisp-checkdoc flycheck-checkers)))
@@ -156,11 +159,13 @@
 
 
 (require 'ansi-color)
-(defun colorize-compilation-buffer ()
-  (read-only-mode)
-  (ansi-color-apply-on-region (point-min) (point-max))
-  (read-only-mode))
-(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+
+(add-hook 'compilation-filter-hook
+          (lambda ()
+            (read-only-mode)
+            (ansi-color-apply-on-region (point-min) (point-max))
+            (read-only-mode)))
+
 
 (add-hook 'scss-mode (lambda () (rainbow-mode)))
 (add-hook 'before-save-hook 'whitespace-cleanup)
@@ -175,6 +180,4 @@
 ;;#omg (yes hashtag #omg)
 (autoload 'asp-mode "asp-mode")
 (add-to-list 'auto-mode-alist '("\\.asp\\'" . asp-mode))
-
-
 (add-to-list 'auto-mode-alist '("\\.purs" . haskell-mode))
