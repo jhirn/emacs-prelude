@@ -112,7 +112,7 @@
 (setq exec-path (cons "/usr/local/bin" exec-path))
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 (setenv "PATH" (concat "/usr/texbin:" (getenv "PATH")))
-
+(setenv "PAGER" (executable-find "cat"))
 
 (add-to-list 'auto-mode-alist '("\\.jst" . html-mode))
 ;; Captain hooks
