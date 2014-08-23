@@ -142,9 +142,6 @@
 
 ;;(setq comint-process-echoes t)
 
-;;(add-to-list 'ac-modes 'shell-mode)
-;;(add-hook 'shell-mode-hook 'ac-rlc-setup-sources)
-
 ;;(setq explicit-bash-args '("--noediting" "--login" "-i"))
 
 ;;(require 'markdown-mode)

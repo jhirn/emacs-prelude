@@ -5,25 +5,36 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-(defvar my-packages '(flymake-easy
-                      sml-mode
-                      auto-complete
-                      ac-nrepl
-                      ac-js2
-                      rspec-mode
-                      powerline
-                      smex
-                      twittering-mode
-                      pomodoro
-                      tidy
-                      bundler
-                      rbenv
-                      window-number
-                      popwin
-                      (org (20140210))
-                      js2-mode
-                      js2-refactor
-                      discover-js2-refactor))
+(defvar my-packages)
+(setq my-packages '(flymake-easy
+                    sml-mode
+                    auto-complete
+                    ac-cider
+                    ac-js2
+                    rspec-mode
+                    powerline
+                    smex
+                    twittering-mode
+                    pomodoro
+                    tidy
+                    bundler
+                    rbenv
+                    window-number
+                    popwin
+                    (org (20140210))
+                    js2-mode
+                    js2-refactor
+                    discover-js2-refactor
+                    elixir-mode
+                    elixir-mix
+                    company-inf-ruby
+                    company-ghc
+                    helm-rails
+                    helm-robe
+                    helm-git
+                    helm-gist
+                    helm-company
+                    helm-ack))
 
 (defun install-package (package min-version)
   (unless (package-installed-p package min-version)
