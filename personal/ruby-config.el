@@ -19,3 +19,14 @@
 (setq ruby-deep-indent-paren nil)
 
 (add-hook 'ruby-mode-hook 'robe-mode)
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)
+
+(add-hook 'robe-mode-on-hook
+          (lambda ()
+            (remove-hook 'completion-at-point-functions
+                         'robe-complete-at-point t)))
+
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (set (make-local-variable 'company-backends)
+                 (remq 'company-capf company-backends))))
