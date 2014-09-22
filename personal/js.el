@@ -1,6 +1,7 @@
 (require 'js2-mode)
 
 (setq js2-basic-offset 2);nerd rage I must set this separate from 'default-tab-width
+(setq js2-bounce-indent-p t)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
