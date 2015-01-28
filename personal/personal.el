@@ -1,5 +1,6 @@
-;;Apple, think different
+;;(require 'prelude)
 
+;;Apple, think different
 (setq
  ns-command-modifier   'meta            ; Apple/Command key is Meta
  ns-alternate-modifier 'super           ; Option is the Mac Option key
@@ -47,7 +48,7 @@
 
 (defun set-font-mba ()
   (interactive)
-  (set-font-size 113))
+  (set-font-size 120))
 
 (defun set-font-pairing-station ()
   (interactive)
@@ -73,7 +74,7 @@
 (setq scheme-program-name "petite")
 
 (powerline-default-theme)
-(global-rainbow-delimiters-mode t)
+;;(global-rainbow-delimiters-mode t)
 (setq custom-theme-directory (concat prelude-personal-dir "/themes"))
 (if window-system
     (progn
@@ -87,12 +88,14 @@
 
 (scroll-bar-mode -1)
 ;;(set-fringe-mode 0)
+(set-fringe-style '(6 . 0))
 (require 'linum)
 (global-linum-mode 1)
 (global-hl-line-mode -1)
 (setq linum-format " %d ")
 (blink-cursor-mode t)
-(set-default 'cursor-type 'bar)
+(set-default 'cursor-type '(bar . 2))
+(set-cursor-color "white")
 (global-visual-line-mode t)
 
 (require 'prelude-editor)
@@ -122,7 +125,8 @@
 (smex-initialize)
 (setq smex-show-unbound-commands t)
 
-(global-set-key (kbd "M-x") 'smex)
+;(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-/") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-S-f") 'prelude-indent-buffer)
 (global-set-key (kbd "C-\\") 'switch-to-previous-buffer)
@@ -131,7 +135,7 @@
 (global-set-key (kbd "<M-C-up>") 'move-line-up)
 (global-set-key (kbd "<M-C-down>") 'move-line-down)
 (global-set-key [C-backspace] 'backward-kill-word)
-
+(global-set-key (kbd "C-c C-f") 'projectile-find-file)
 (setq ring-bell-function (lambda () (message "*beep*")))
 
 (require 'shell)
@@ -183,7 +187,5 @@
                   (when (not (file-exists-p dir))
                     (make-directory dir t)))))))
 
-;;#omg (yes hashtag #omg)
-(autoload 'asp-mode "asp-mode")
-(add-to-list 'auto-mode-alist '("\\.asp\\'" . asp-mode))
-(add-to-list 'auto-mode-alist '("\\.purs" . haskell-mode))
+
+(set-font-mba)

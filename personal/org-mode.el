@@ -1,3 +1,4 @@
+(require 'org)
 (require 'ox-latex)
 
 (setq org-export-latex-hyperref-options-format "\\hypersetup{
@@ -10,3 +11,6 @@
 
 (custom-set-faces  '(org-link ((t (:foreground "dark gray")))))
 (setq org-export-backends '(ascii html icalendar latex man md))
+
+(setq org-log-done t)
+(setq org-agenda-files '("~/src/org"))
