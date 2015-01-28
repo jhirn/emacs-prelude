@@ -22,7 +22,7 @@
                     window-number
                     popwin
                     (org (20140210))
-                    j3-mode
+                    js3-mode
                     elixir-mode
                     elixir-mix
                     company-inf-ruby
