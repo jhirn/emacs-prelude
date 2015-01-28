@@ -32,7 +32,9 @@
                     helm-git
                     helm-gist
                     helm-company
-                    helm-ack))
+                    helm-ack
+                    robe
+                    rubocop))
 
 (defun install-package (package min-version)
   (unless (package-installed-p package min-version)
