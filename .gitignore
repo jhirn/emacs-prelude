@@ -25,3 +25,6 @@ nrepl-history
 tramp
 /var/pcache
 request
+tutorial
+.mc-lists.el
+.org-id-locations
