@@ -22,9 +22,7 @@
                     window-number
                     popwin
                     (org (20140210))
-                    js2-mode
-                    js2-refactor
-                    discover-js2-refactor
+                    j3-mode
                     elixir-mode
                     elixir-mix
                     company-inf-ruby
