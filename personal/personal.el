@@ -136,7 +136,16 @@
 (global-set-key (kbd "<M-C-down>") 'move-line-down)
 (global-set-key [C-backspace] 'backward-kill-word)
 (global-set-key (kbd "C-c C-f") 'projectile-find-file)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C-S-c C->") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-S-c C-<") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+
 (setq ring-bell-function (lambda () (message "*beep*")))
+
 
 (require 'shell)
 (setq explicit-shell-file-name "bash")
