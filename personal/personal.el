@@ -196,5 +196,7 @@
                   (when (not (file-exists-p dir))
                     (make-directory dir t)))))))
 
+; Don't guess filename at point
+(setq ido-use-filename-at-point nil)
 
 (set-font-mba)
