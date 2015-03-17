@@ -117,6 +117,11 @@
 (setenv "PATH" (concat "/usr/texbin:" (getenv "PATH")))
 (setenv "PAGER" (executable-find "cat"))
 
+(setenv "DOCKER_IP" "192.168.59.103")
+(setenv "DOCKER_TLS_VERIFY" "0")
+(setenv "DOCKER_HOST" "tcp://192.168.59.103:2376")
+(setenv "DOCKER_CERT_PATH" "/Users/jhirn/.boot2docker/certs/boot2docker-vm")
+
 (add-to-list 'auto-mode-alist '("\\.jst" . html-mode))
 ;; Captain hooks
 

@@ -34,7 +34,8 @@
                     helm-company
                     helm-ack
                     robe
-                    rubocop))
+                    rubocop
+                    prodigy))
 
 (defun install-package (package min-version)
   (unless (package-installed-p package min-version)
