@@ -37,7 +37,7 @@
   (transpose-preserving-row 1))
 
 (defun switch-to-previous-buffer ()
-  "toggle between this and previous buffer"
+  "toggle between current and previous buffer"
   (interactive)
   (switch-to-buffer (other-buffer)))
 
