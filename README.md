@@ -1,13 +1,7 @@
 # jhirn's Prelude
 
 [![License GPL 3][badge-license]](http://www.gnu.org/licenses/gpl-3.0.txt)
-[![Gittip](http://img.shields.io/gittip/bbatsov.svg)](https://www.gittip.com/bbatsov/)
-
-
-Git Tip that man! He deserves it!
-
-Emacs Prelude
-=============
+[![Gratipay](http://img.shields.io/gratipay/bbatsov.svg)](https://gratipay.com/bbatsov/)
 
 My personal fork of [Bozhidar's](https://twitter.com/bbatsov) most excellent [emacs-prelude](https://github.com/bbatsov/prelude) starter-kit.
 
