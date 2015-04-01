@@ -1,7 +1,8 @@
 (require 'prodigy)
 
 (prodigy-define-tag
-  :name 'docker)
+  :name 'docker
+  :ready-message "Attaching to \\.*")
 
 (prodigy-define-tag
   :name 'thin
@@ -33,7 +34,7 @@
     :command "bundle"
     :args '("exec" "rails" "server")
     :cwd cwd
-    :tags '(docker)))
+    :tags '(rails)))
 
 
 (let ((project "vivor")
