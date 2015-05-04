@@ -41,3 +41,16 @@
       (cwd "~/src/devmynd/vivor"))
   (prodigy-define-docker-compose project cwd)
   (prodigy-define-rails-server project cwd))
+
+
+(let ((project "dpc")
+      (cwd "~/src/devmynd/dpc/dpc-app"))
+  (prodigy-define-docker-compose project cwd)
+  (prodigy-define-rails-server project cwd))
+
+(let ((project "msg")
+      (cwd "~/src/devmynd/msggo"))
+  (prodigy-define-docker-compose project cwd)
+  (prodigy-define-rails-server project cwd))
+
+(prodigy-define-docker-compose "jsonb_accessor" "~/src/devmynd/internal/jsonb_accessor")
