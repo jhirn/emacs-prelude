@@ -58,8 +58,8 @@ Used and created by Dayton Nolan.")
  '(org-hide ((t (:foreground "gray30"))))
  '(org-tag ((t (:weight bold))))
 
- `(link ((t (:foreground ,"#253B76" :underline t :weight bold))))
- `(link-visited ((t (:foreground ,"#253B76" :underline t :weight normal))))
+ `(link ((t (:foreground ,"deep sky blue" :underline t :weight bold))))
+ `(link-visited ((t (:foreground ,"#93E0E3" :underline t :weight normal))))
 
  `(font-lock-builtin-face ((t (:foreground ,"#D8FA3C"))))
  `(font-lock-comment-face ((t (:foreground ,"#FF0080"))))
@@ -90,7 +90,7 @@ Used and created by Dayton Nolan.")
  `(rainbow-delimiters-depth-10-face ((t (:foreground ,"yellow"))))
  `(rainbow-delimiters-depth-11-face ((t (:foreground ,"white"))))
  `(rainbow-delimiters-depth-12-face ((t (:foreground ,"orange"))))
- 
+
  '(region ((t (:background "#253B76"))))
 
  '(show-paren-match ((t (:background "#271F19"))))
