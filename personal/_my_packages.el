@@ -27,6 +27,8 @@
                     elixir-mix
                     company-inf-ruby
                     company-ghc
+                    ag
+                    helm-ag
                     helm-rails
                     helm-robe
                     helm-git
