@@ -75,10 +75,10 @@
 
 ;;(show-paren-mode nil)
 
-
+(require 'scheme)
 (setq scheme-program-name "petite")
 
-(powerline-default-theme)
+;(powerline-default-theme)
 ;;(global-rainbow-delimiters-mode t)
 (setq custom-theme-directory (concat prelude-personal-dir "/themes"))
 (if window-system
@@ -94,6 +94,7 @@
 (scroll-bar-mode -1)
 ;;(set-fringe-mode 0)
 (set-fringe-style '(6 . 0))
+
 (require 'linum)
 (global-linum-mode 1)
 (global-hl-line-mode -1)
@@ -111,6 +112,8 @@
 (setq ispell-dictionary "en")
 (setq tab-width 2)
 (setq-default show-trailing-whitespace nil)
+
+
 (require 'vc)
 (setq vc-suppress-confirm t)
 (setq vc-follow-symlinks t)
