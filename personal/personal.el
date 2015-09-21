@@ -213,3 +213,6 @@
 (setq ido-use-filename-at-point nil)
 
 (set-font-mba)
+
+(setq magit-auto-revert-mode nil)
+(setq magit-last-seen-setup-instructions "1.4.0")
