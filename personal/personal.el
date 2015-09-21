@@ -48,7 +48,7 @@
 
 (defun set-font-mba ()
   (interactive)
-  (set-font-size 130))
+  (set-font-size 120))
 
 (defun set-font-pairing-station ()
   (interactive)
