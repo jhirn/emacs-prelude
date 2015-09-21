@@ -44,12 +44,18 @@
 
 
 (let ((project "dpc")
-      (cwd "~/src/devmynd/dpc/dpc-app"))
+      (cwd "~/src/devmynd/dpc/dpc_app"))
   (prodigy-define-docker-compose project cwd)
   (prodigy-define-rails-server project cwd))
 
 (let ((project "msg")
       (cwd "~/src/devmynd/msggo"))
+  (prodigy-define-docker-compose project cwd)
+  (prodigy-define-rails-server project cwd))
+
+
+(let ((project "mme")
+      (cwd "~/src/devmynd/mme"))
   (prodigy-define-docker-compose project cwd)
   (prodigy-define-rails-server project cwd))
 
