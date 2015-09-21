@@ -23,8 +23,6 @@
                     popwin
                     (org (20140210))
                     js3-mode
-                    elixir-mode
-                    elixir-mix
                     company-inf-ruby
                     company-ghc
                     ag
