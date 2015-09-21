@@ -29,3 +29,6 @@
 (eval-after-load 'js
   (font-lock-add-keywords
    'js3-mode js-fontlock-keywords))
+
+(require 'json-reformat)
+(setq json-reformat:indent-width 2)
