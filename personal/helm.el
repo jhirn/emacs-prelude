@@ -13,7 +13,6 @@
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
 
-
 (add-to-list 'display-buffer-alist
              `(,(rx bos "*helm" (* not-newline) "*" eos)
                (display-buffer-in-side-window)

@@ -144,7 +144,7 @@
 (global-set-key (kbd "C-S-f") 'prelude-indent-buffer)
 (global-set-key (kbd "C-\\") 'switch-to-previous-buffer)
 (global-set-key (kbd "RET") 'newline-and-indent)
-(global-set-key (kbd "C-c C-t") 'toggle-transparency)
+(global-set-key (kbd "C-c M-t") 'toggle-transparency)
 (global-set-key (kbd "<M-C-up>") 'move-line-up)
 (global-set-key (kbd "<M-C-down>") 'move-line-down)
 (global-set-key [C-backspace] 'backward-kill-word)

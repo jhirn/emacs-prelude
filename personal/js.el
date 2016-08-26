@@ -1,10 +1,10 @@
-(require 'js3-mode)
+(require 'js2-mode)
 
-;(setq js2-basic-offset 2);nerd rage I must set this separate from 'default-tab-width
-;(setq js2-bounce-indent-p t)
+(setq js2-basic-offset 2
+      js2-bounce-indent-p t
+      js2-strict-missing-semi-warning nil)
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js3-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js3-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (defvar js-fontlock-keywords `(("\\(function *\\)[(|[[:space:]]]?"
                     (0 (progn (compose-region (match-beginning 1)
@@ -25,10 +25,6 @@
 (eval-after-load 'js
   (font-lock-add-keywords
    'js-mode js-fontlock-keywords))
-
-(eval-after-load 'js
-  (font-lock-add-keywords
-   'js3-mode js-fontlock-keywords))
 
 (require 'json-reformat)
 (setq json-reformat:indent-width 2)

@@ -6,36 +6,36 @@
   (package-refresh-contents))
 
 (defvar my-packages)
-(setq my-packages '(flymake-easy
-                    sml-mode
-                    auto-complete
-                    ac-cider
-                    ac-js2
-                    rspec-mode
-                    powerline
-                    smex
-                    twittering-mode
-                    pomodoro
-                    tidy
-                    bundler
-                    rbenv
-                    window-number
-                    popwin
-                    (org (20140210))
-                    js3-mode
-                    company-inf-ruby
-                    company-ghc
-                    ag
-                    helm-ag
-                    helm-rails
-                    helm-robe
-                    helm-git
-                    helm-gist
-                    helm-company
-                    helm-ack
-                    robe
-                    rubocop
-                    prodigy))
+(setq my-packages
+      '((org (20140210))
+        ac-cider
+        ac-js2
+        ag
+        auto-complete
+        bundler
+        company-ghc
+        company-inf-ruby
+        helm-ack
+        helm-ag
+        helm-company
+        helm-gist
+        helm-git
+        helm-rails
+        helm-robe
+        pomodoro
+        popwin
+        powerline
+        prodigy
+        rbenv
+        robe
+        rspec-mode
+        rubocop
+        smex
+        sml-mode
+        tidy
+        twittering-mode
+        window-number
+        flymake-easy))
 
 (defun install-package (package min-version)
   (unless (package-installed-p package min-version)
