@@ -28,3 +28,5 @@ request
 tutorial
 .mc-lists.el
 .org-id-locations
+.emacs.desktop
+.emacs.desktop.lock
