@@ -1,6 +1,8 @@
 ;; Ruby
 (require 'ruby-mode)
 (require 'robe)
+(require 'rspec-mode)
+
 
 (defun create-tags-rails (dir-name)
   "Create tags file."
@@ -30,3 +32,11 @@
           (lambda ()
             (set (make-local-variable 'company-backends)
                  (remq 'company-capf company-backends))))
+
+
+
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)
+(setq rspec-autosave-buffer t)
+(setq rspec-spec-command "bin/rspec")
+(setq rspec-use-spring-when-possible nil)
+(setq rspec-use-bundler-when-possible nil)
