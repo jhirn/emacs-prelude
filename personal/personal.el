@@ -54,7 +54,6 @@
   (interactive)
   (set-font-size 160))
 
-
 (defun set-font-presentation ()
   (interactive)
   (set-font-size 220))
