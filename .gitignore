@@ -32,3 +32,6 @@ tutorial
 .emacs.desktop.lock
 network-security.data
 personal/sql.el
+prelude-cheatsheet.el
+prelude-cheatsheet.aux
+prelude-cheatsheet.log
