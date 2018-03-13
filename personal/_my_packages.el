@@ -11,31 +11,18 @@
         ac-cider
         ac-js2
         ag
-        auto-complete
         bundler
-        company-ghc
+        company
         company-inf-ruby
-        helm-ack
-        helm-ag
         helm-company
-        helm-gist
-        helm-git
         helm-rails
-        helm-robe
-        pomodoro
-        popwin
-        powerline
+        flymake-easy
         prodigy
-        rbenv
-        robe
         rspec-mode
-        rubocop
-        smex
-        sml-mode
+        rbenv
         tidy
-        twittering-mode
         window-number
-        flymake-easy))
+        multiple-cursors))
 
 (defun install-package (package min-version)
   (unless (package-installed-p package min-version)

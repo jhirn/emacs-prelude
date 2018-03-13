@@ -27,7 +27,7 @@
 (eval-after-load "org"
   '(require 'ox-freemind nil t))
 
-(require 'org-gcal)
+;(require 'org-gcal)
 ;; (setq org-gcal-client-id ""
 ;;       org-gcal-client-secret ""
 ;;       org-gcal-file-alist '(("joseph.hirn@devmynd.com" .  "~/src/org/work-gcal.org")))

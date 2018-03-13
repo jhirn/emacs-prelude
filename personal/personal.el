@@ -6,6 +6,7 @@
  ns-alternate-modifier 'super           ; Option is the Mac Option key
  mouse-wheel-scroll-amount '(1)
  mouse-wheel-progressive-speed nil)
+;(mac-toggle-tab-bar)
 
 ;;Some functions
 
@@ -41,6 +42,7 @@
   (interactive)
   (switch-to-buffer (other-buffer)))
 
+
 (defun maximize-frame ()
   (interactive)
   (set-frame-position (selected-frame) 0 0)
@@ -48,7 +50,7 @@
 
 (defun set-font-mba ()
   (interactive)
-  (set-font-size 120))
+  (set-font-size 105))
 
 (defun set-font-pairing-station ()
   (interactive)
@@ -72,14 +74,14 @@
       (set-frame-parameter nil 'alpha '(100 100))
     (set-frame-parameter nil 'alpha '(82 70))))
 
-;;(show-paren-mode nil)
-
 (require 'scheme)
 (setq scheme-program-name "petite")
 
-;(powerline-default-theme)
-;;(global-rainbow-delimiters-mode t)
+(require 'prelude-editor)
+(setq prelude-guru nil)
+(setq prelude-whitespace nil)
 (setq custom-theme-directory (concat prelude-personal-dir "/themes"))
+
 (if window-system
     (progn
       (global-unset-key "\C-z")
@@ -103,20 +105,16 @@
 (set-cursor-color "white")
 (global-visual-line-mode t)
 
-(require 'prelude-editor)
-(setq prelude-guru nil)
-(setq prelude-whitespace nil)
+
 
 (require 'ispell)
 (setq ispell-dictionary "en")
 (setq tab-width 2)
 (setq-default show-trailing-whitespace nil)
 
-
 (require 'vc)
 (setq vc-suppress-confirm t)
 (setq vc-follow-symlinks t)
-
 
 
 (setq exec-path (cons "/usr/local/bin" exec-path))
@@ -124,10 +122,7 @@
 (setenv "PATH" (concat "/usr/texbin:" (getenv "PATH")))
 (setenv "PAGER" (executable-find "cat"))
 
-(setenv "DOCKER_IP" "192.168.59.103")
-(setenv "DOCKER_TLS_VERIFY" "0")
-(setenv "DOCKER_HOST" "tcp://192.168.59.103:2376")
-(setenv "DOCKER_CERT_PATH" "/Users/jhirn/.boot2docker/certs/boot2docker-vm")
+
 
 (add-to-list 'auto-mode-alist '("\\.jst" . html-mode))
 ;; Captain hooks
@@ -137,7 +132,7 @@
 (smex-initialize)
 (setq smex-show-unbound-commands t)
 
-;(global-set-key (kbd "M-x") 'smex)
+                                        ;(global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-/") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-S-f") 'prelude-indent-buffer)
@@ -154,7 +149,7 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
+(global-unset-key (kbd "C-\ C-\\"))
 
 (setq ring-bell-function (lambda () (message "*beep*")))
 
@@ -164,13 +159,6 @@
 (setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash --login -i"))
 (setq auto-mode-alist
       (cons '("\\.bats\'" . sh-mode) auto-mode-alist))
-
-;;(setq comint-process-echoes t)
-
-;;(setq explicit-bash-args '("--noediting" "--login" "-i"))
-
-;;(require 'markdown-mode)
-;;(setq markdown-css-path (concat prelude-dir "personal/Github.css"))
 
 (eval-after-load 'flycheck
   '(setq flycheck-checkers
@@ -215,3 +203,4 @@
 
 (setq magit-auto-revert-mode nil)
 (setq magit-last-seen-setup-instructions "1.4.0")
+(setq confirm-kill-emacs 'y-or-n-p)

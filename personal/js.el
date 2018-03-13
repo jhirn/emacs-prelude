@@ -26,7 +26,7 @@
   (font-lock-add-keywords
    'js-mode js-fontlock-keywords))
 
-(require 'json-reformat)
-(setq json-reformat:indent-width 2)
+;(require 'json-reformat)
+;(setq json-reformat:indent-width 2)
 
 (require 'flycheck)
