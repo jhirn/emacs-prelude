@@ -31,3 +31,4 @@ tutorial
 .emacs.desktop
 .emacs.desktop.lock
 network-security.data
+personal/sql.el
