@@ -50,15 +50,15 @@
 
 (defun set-font-mba ()
   (interactive)
-  (set-font-size 105))
+  (set-font-size 110))
 
 (defun set-font-pairing-station ()
   (interactive)
-  (set-font-size 160))
+  (set-font-size 140))
 
-(defun set-font-presentation ()
+(defun set-font-projector ()
   (interactive)
-  (set-font-size 220))
+  (set-font-size 300))
 
 (defun set-font-size (font-height)
   (custom-set-faces `(default ((t (:height ,font-height :family "monaco"))))))
@@ -77,7 +77,8 @@
 (require 'scheme)
 (setq scheme-program-name "petite")
 
-(require 'prelude-editor)
+(require 'prelude-core)
+
 (setq prelude-guru nil)
 (setq prelude-whitespace nil)
 (setq custom-theme-directory (concat prelude-personal-dir "/themes"))
