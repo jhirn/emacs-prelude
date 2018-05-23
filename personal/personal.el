@@ -199,11 +199,17 @@
                   (when (not (file-exists-p dir))
                     (make-directory dir t)))))))
 
-; Don't guess filename at point
-(setq ido-use-filename-at-point nil)
+
+;(setq ido-use-filename-at-point nil)
+
+
+
+(setq magit-auto-revert-mode nil
+      magit-last-seen-setup-instructions "1.4.0")
+(setq kill-do-not-save-duplicates t)
+(setq window-combination-resize t)
+(setq confirmde-kill-emacs 'y-or-n-p)
+
 
 (set-font-mba)
-
-(setq magit-auto-revert-mode nil)
-(setq magit-last-seen-setup-instructions "1.4.0")
-(setq confirm-kill-emacs 'y-or-n-p)
+(evil-mode 0)
