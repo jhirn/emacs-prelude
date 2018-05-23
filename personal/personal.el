@@ -151,8 +151,10 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (global-unset-key (kbd "C-\ C-\\"))
-
 (setq ring-bell-function (lambda () (message "*beep*")))
+
+(require 'multiple-cursors)
+(define-key mc/keymap (kbd "C-;") 'mc-hide-unmatched-lines-mode)
 
 
 (require 'shell)
