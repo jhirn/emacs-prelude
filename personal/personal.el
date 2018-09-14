@@ -142,6 +142,7 @@ KEY must be given in `kbd' notation."
      (setq prefix-arg current-prefix-arg)
      (setq unread-command-events (listify-key-sequence (read-kbd-macro ,key)))))
 
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (global-set-key (kbd "C-c C-p") (simulate-key-press "C-c p"))
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-/") 'comment-or-uncomment-region)
