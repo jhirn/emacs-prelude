@@ -1,6 +1,6 @@
 ;;; prelude-ruby.el --- Emacs Prelude: A nice setup for Ruby (and Rails) devs.
 ;;
-;; Copyright © 2011-2017 Bozhidar Batsov
+;; Copyright © 2011-2018 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: https://github.com/bbatsov/prelude
@@ -41,17 +41,16 @@
 
 (define-key 'help-command (kbd "R") 'yari)
 
-(eval-after-load 'ruby-mode
-  '(progn
-     (defun prelude-ruby-mode-defaults ()
-       (inf-ruby-minor-mode +1)
-       ;; CamelCase aware editing operations
-       (subword-mode +1))
+(with-eval-after-load 'ruby-mode
+  (defun prelude-ruby-mode-defaults ()
+    (inf-ruby-minor-mode +1)
+    ;; CamelCase aware editing operations
+    (subword-mode +1))
 
-     (setq prelude-ruby-mode-hook 'prelude-ruby-mode-defaults)
+  (setq prelude-ruby-mode-hook 'prelude-ruby-mode-defaults)
 
-     (add-hook 'ruby-mode-hook (lambda ()
-                                 (run-hooks 'prelude-ruby-mode-hook)))))
+  (add-hook 'ruby-mode-hook (lambda ()
+                              (run-hooks 'prelude-ruby-mode-hook))))
 
 (provide 'prelude-ruby)
 ;;; prelude-ruby.el ends here
