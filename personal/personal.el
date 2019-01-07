@@ -223,3 +223,4 @@ KEY must be given in `kbd' notation."
 
 (set-font-mba)
 (evil-mode 0)
+(setq undo-tree-visualizer-timestamps 't)
