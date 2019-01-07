@@ -35,8 +35,10 @@
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
 (setq ruby-insert-encoding-magic-comment nil)
+
+
 (setq rspec-autosave-buffer t)
 (setq rspec-spec-command "bin/rspec")
 (setq rspec-use-spring-when-possible nil)
 (setq rspec-use-bundler-when-possible nil)
-(setq rspec-use-opts-file-when-available nil)
+;;(setq rspec-use-opts-file-when-available nil)
