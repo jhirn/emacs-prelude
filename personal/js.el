@@ -1,10 +1,12 @@
 (require 'js2-mode)
+(require 'prettier-js)
 
 (setq js2-basic-offset 2
       js2-bounce-indent-p t
       js2-strict-missing-semi-warning nil)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-hook 'js2-mode-hook 'prettier-js-mode)
 
 (defvar js-fontlock-keywords `(("\\(function *\\)[(|[[:space:]]]?"
                                 (0 (progn (compose-region (match-beginning 1)
