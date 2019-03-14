@@ -97,10 +97,12 @@
 ;;(set-fringe-mode 0)
 (set-fringe-style '(6 . 0))
 
-(require 'linum)
-(global-linum-mode 1)
-(global-hl-line-mode -1)
-(setq linum-format " %d ")
+;;(require 'linum)
+;;(global-linum-mode 0)
+;;(global-hl-line-mode -1)
+;;(setq linum-format " %d ")
+(global-display-line-numbers-mode)
+
 (blink-cursor-mode t)
 (set-default 'cursor-type '(bar . 2))
 (set-cursor-color "white")
