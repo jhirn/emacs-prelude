@@ -1,3 +1,3 @@
 (require 'projectile)
 
-(setq projectile-enable-caching t)
+(setq projectile-enable-caching nil)
