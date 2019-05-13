@@ -18,9 +18,10 @@
         helm-rails
         flymake-easy
         prodigy
+        prettier-js
+        robe
         rspec-mode
         rbenv
-        tidy
         window-number
         multiple-cursors))
 
