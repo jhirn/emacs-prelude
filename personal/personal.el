@@ -162,7 +162,9 @@ KEY must be given in `kbd' notation."
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-(global-unset-key (kbd "C-\ C-\\"))
+
+(defun toggle-input-method ()
+  )
 (setq ring-bell-function (lambda () (message "*beep*")))
 
 (require 'multiple-cursors)
