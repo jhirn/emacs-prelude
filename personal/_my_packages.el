@@ -16,12 +16,15 @@
         company-inf-ruby
         helm-company
         helm-rails
+        helm-ag
+        fish-mode
         flymake-easy
         prodigy
         prettier-js
         robe
         rspec-mode
         rbenv
+        rubocop
         window-number
         multiple-cursors))
 
