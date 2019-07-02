@@ -21,6 +21,7 @@
         flymake-easy
         prodigy
         prettier-js
+        rjsx-mode
         robe
         rspec-mode
         rbenv
