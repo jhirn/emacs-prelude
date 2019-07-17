@@ -7,24 +7,18 @@
 
 (defvar my-packages)
 (setq my-packages
-      '((org (20140210))
-        ac-cider
-        ac-js2
-        ag
+      '(ag
         bundler
         company
         company-inf-ruby
+        eslintd-fix
         helm-company
         helm-rails
         helm-ag
         fish-mode
-        flymake-easy
-        prodigy
-        prettier-js
         rjsx-mode
         robe
         rspec-mode
-        rbenv
         rubocop
         window-number
         multiple-cursors))

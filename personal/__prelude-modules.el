@@ -10,7 +10,7 @@
 (require 'prelude-evil)
 (require 'prelude-company)
 ;; (require 'prelude-erlang)
-(require 'prelude-haskell)
+;; (require 'prelude-haskell)
 (require 'prelude-js)
 ;; (require 'prelude-latex)
 (require 'prelude-lisp)

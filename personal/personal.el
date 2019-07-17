@@ -163,16 +163,15 @@ KEY must be given in `kbd' notation."
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-(defun toggle-input-method ()
-  )
+(defun toggle-input-method ())
 (setq ring-bell-function (lambda () (message "*beep*")))
 
 (require 'multiple-cursors)
 (define-key mc/keymap (kbd "C-;") 'mc-hide-unmatched-lines-mode)
 
-
 (require 'shell)
 (setq explicit-shell-file-name "bash")
+(setq shell-file-name "/usr/local/bin/bash")
 (setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash --login -i"))
 (setq auto-mode-alist
       (cons '("\\.bats\'" . sh-mode) auto-mode-alist))
@@ -228,3 +227,11 @@ KEY must be given in `kbd' notation."
 (set-font-mba)
 (evil-mode 0)
 (setq undo-tree-visualizer-timestamps 't)
+
+
+(setq coffee-indent-like-python-mode nil
+      coffee-tab-width 2)
+
+'(setq projectile-enable-caching nil
+       projectile-generic-command "fd . -0"
+       rspec-spec-command "bundle exec spring rspec")
