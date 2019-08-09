@@ -4,18 +4,6 @@
 (require 'rspec-mode)
 
 
-(defun create-tags-rails (dir-name)
-  "Create tags file."
-  (interactive "DDirectory: ")
-  (shell-command
-   (format "cd %s; ctags -a -e -f TAGS --tag-relative -R app lib" dir-name)))
-
-
-(setq exec-path (cons "~/.rbenv/bin" exec-path))
-(setenv "PATH" (concat "~/.rbenv/bin:" (getenv "PATH")))
-(setq exec-path (cons "~/.rbenv/shims" exec-path))
-(setenv "PATH" (concat "~/.rbenv/shims:" (getenv "PATH")))
-
 (add-to-list 'auto-mode-alist '("\\.irbrc" . ruby-mode))
 
 (setq ruby-deep-indent-paren nil)
@@ -32,6 +20,7 @@
           (lambda ()
             (set (make-local-variable 'company-backends)
                  (remq 'company-capf company-backends))))
+
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
 (setq ruby-insert-encoding-magic-comment nil)
