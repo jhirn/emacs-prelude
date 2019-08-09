@@ -72,7 +72,7 @@
        (or (cadr (frame-parameter nil 'alpha)) 100)
        100)
       (set-frame-parameter nil 'alpha '(100 100))
-    (set-frame-parameter nil 'alpha '(82 70))))
+    (set-frame-parameter nil 'alpha '(88 82))))
 
 (require 'scheme)
 (setq scheme-program-name "petite")
@@ -232,6 +232,6 @@ KEY must be given in `kbd' notation."
 (setq coffee-indent-like-python-mode nil
       coffee-tab-width 2)
 
-'(setq projectile-enable-caching nil
+(setq projectile-enable-caching nil
        projectile-generic-command "fd . -0"
        rspec-spec-command "bundle exec spring rspec")
