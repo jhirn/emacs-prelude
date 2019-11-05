@@ -48,8 +48,8 @@ Used and created by Dayton Nolan.")
 
  '(minibuffer-prompt ((t (:background "#271F19" :foreground "#FBDE2D" :box (:line-width -1 :color "#271F19") :weight bold))))
 
- '(mode-line ((t (:background "#61CE3C" :foreground "#271F19" :box (:style nil) :family "Arial"))))
- '(mode-line-inactive ((t (:inherit mode-line :box nil))))
+ '(mode-line ((t (:background "#61CE3C" :foreground "#271F19" :box nil :family "Arial"))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "#386334" :foreground "#61CE3C" ))))
 
  '(org-agenda-date ((t (:inherit org-agenda-structure))))
  '(org-agenda-date-today ((t (:inherit org-agenda-date :underline t))))
