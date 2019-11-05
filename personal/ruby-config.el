@@ -6,7 +6,13 @@
 
 (add-to-list 'auto-mode-alist '("\\.irbrc" . ruby-mode))
 
-(setq ruby-deep-indent-paren nil)
+(setq rspec-autosave-buffer t
+      rspec-spec-command "bin/rspec"
+      rspec-use-spring-when-possible nil
+      rspec-use-bundler-when-possible nil)
+
+(setq ruby-insert-encoding-magic-comment nil
+      ruby-deep-indent-paren nil)
 
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
@@ -23,11 +29,8 @@
 
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
-(setq ruby-insert-encoding-magic-comment nil)
 
-
-(setq rspec-autosave-buffer t)
-(setq rspec-spec-command "bin/rspec")
-(setq rspec-use-spring-when-possible nil)
-(setq rspec-use-bundler-when-possible nil)
 ;;(setq rspec-use-opts-file-when-available nil)
+
+(add-to-list 'auto-mode-alist         '("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode))
+(add-hook 'enh-ruby-mode-hook 'robe-mode)

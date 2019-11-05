@@ -160,7 +160,6 @@
           (insert
            (format "%s%s%s" string-quote content string-quote))
           (goto-char orig-point))))))
-
 (defun ruby-tools-clear-string ()
   "Clear string at point."
   (interactive)

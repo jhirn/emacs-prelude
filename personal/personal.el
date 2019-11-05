@@ -52,6 +52,10 @@
   (interactive)
   (set-font-size 110))
 
+(defun set-font-home ()
+  (interactive)
+  (set-font-size 130))
+
 (defun set-font-pairing-station ()
   (interactive)
   (set-font-size 140))
@@ -77,10 +81,11 @@
 (require 'scheme)
 (setq scheme-program-name "petite")
 
-(require 'prelude-core)
+(require 'prelude-custom)
 
-(setq prelude-guru nil)
-(setq prelude-whitespace nil)
+(setq prelude-guru nil
+      prelude-whitespace nil)
+
 (setq custom-theme-directory (concat prelude-personal-dir "/themes"))
 
 (if window-system
@@ -91,18 +96,12 @@
                                         ;     (add-to-list 'default-frame-alist '(width . 100))
                                         ;      (add-to-list 'default-frame-alist '(height . 55))
       (menu-bar-mode 1)))
+
 (disable-theme 'zenburn)
 
 (scroll-bar-mode -1)
-;;(set-fringe-mode 0)
 (set-fringe-style '(6 . 0))
-
-;;(require 'linum)
-;;(global-linum-mode 0)
-;;(global-hl-line-mode -1)
-;;(setq linum-format " %d ")
 (global-display-line-numbers-mode)
-
 (blink-cursor-mode t)
 (set-default 'cursor-type '(bar . 2))
 (set-cursor-color "white")
@@ -125,9 +124,6 @@
 (setenv "PATH" (concat "/usr/texbin:" (getenv "PATH")))
 (setenv "PAGER" (executable-find "cat"))
 
-
-
-(add-to-list 'auto-mode-alist '("\\.jst" . html-mode))
 ;; Captain hooks
 
 ;;Smexy
@@ -214,9 +210,6 @@ KEY must be given in `kbd' notation."
                     (make-directory dir t)))))))
 
 
-;(setq ido-use-filename-at-point nil)
-
-
 (setq magit-auto-revert-mode nil
       magit-last-seen-setup-instructions "1.4.0")
 (setq kill-do-not-save-duplicates t)
@@ -226,12 +219,19 @@ KEY must be given in `kbd' notation."
 
 (set-font-mba)
 (evil-mode 0)
-(setq undo-tree-visualizer-timestamps 't)
 
+(setq undo-tree-visualizer-timestamps 't)
 
 (setq coffee-indent-like-python-mode nil
       coffee-tab-width 2)
 
-(setq projectile-enable-caching nil
-       projectile-generic-command "fd . -0"
-       rspec-spec-command "bundle exec spring rspec")
+
+;; (defun highlight-selected-window ()
+;;   "Highlight selected window with a different background color."
+;;   (walk-windows (lambda (w)
+;;                   (unless (eq w (selected-window))
+;;                     (with-current-buffer (window-buffer w)
+;;                       (buffer-face-set '(:background "#111"))))))
+;;   (buffer-face-set 'default))
+
+;; (add-hook 'buffer-list-update-hook 'highlight-selected-window)
