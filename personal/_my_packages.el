@@ -11,6 +11,7 @@
         bundler
         company
         company-inf-ruby
+        enh-ruby-mode
         eslintd-fix
         helm-company
         helm-rails
