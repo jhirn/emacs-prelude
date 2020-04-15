@@ -1,6 +1,7 @@
 ;;(require 'prelude)
 
 ;;Apple, think different
+(evil-mode 0)
 (setq
  ns-command-modifier   'meta            ; Apple/Command key is Meta
  ns-alternate-modifier 'super           ; Option is the Mac Option key
@@ -9,6 +10,11 @@
 ;(mac-toggle-tab-bar)
 
 ;;Some functions
+
+(defun personal()
+  "Open this file"
+  (interactive)
+  (find-file "~/.emacs.d/personal/personal.el"))
 
 (defun create-shell ()
   "creates a shell with a given name"
@@ -54,14 +60,17 @@
 
 (defun set-font-home ()
   (interactive)
-  (set-font-size 130))
+  (set-font-size 125))
 
 (defun set-font-pairing-station ()
   (interactive)
   (set-font-size 140))
 
-(defun set-font-projector ()
+(defun set-font-home-tuple ()
   (interactive)
+  (set-font-size 250))
+(defun set-font-projector ()
+   (interactive)
   (set-font-size 300))
 
 (defun set-font-size (font-height)
@@ -106,8 +115,6 @@
 (set-default 'cursor-type '(bar . 2))
 (set-cursor-color "white")
 (global-visual-line-mode t)
-
-
 
 (require 'ispell)
 (setq ispell-dictionary "en")
@@ -158,6 +165,13 @@ KEY must be given in `kbd' notation."
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "A-M-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "A-M-<up>") 'enlarge-window)
+(global-set-key (kbd "A-M-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "A-M-<down>") 'shrink-window)
+(global-unset-key [C-tab])
+(global-unset-key [wheel-left])
+(global-unset-key [wheel-right])
 
 (defun toggle-input-method ())
 (setq ring-bell-function (lambda () (message "*beep*")))
@@ -216,15 +230,16 @@ KEY must be given in `kbd' notation."
 (setq window-combination-resize t)
 (setq confirm-kill-emacs 'y-or-n-p)
 
-
 (set-font-mba)
-(evil-mode 0)
+
 
 (setq undo-tree-visualizer-timestamps 't)
 
 (setq coffee-indent-like-python-mode nil
       coffee-tab-width 2)
 
+
+(setq ido-use-filename-at-point nil)
 
 ;; (defun highlight-selected-window ()
 ;;   "Highlight selected window with a different background color."

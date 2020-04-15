@@ -1,6 +1,8 @@
+(require 'use-package)
 (require 'js2-mode)
 (require 'eslintd-fix)
 (require 'flycheck)
+
 
 (setq js2-basic-offset 2
       js2-bounce-indent-p t
@@ -8,12 +10,9 @@
       flycheck-javascript-eslint-executable "eslint_d")
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-
 (add-to-list 'auto-mode-alist '("components\\/.*\\.js[x]?\\'" . rjsx-mode))
 
 
-(add-hook 'js2-mode-hook 'eslintd-fix-mode)
-(add-hook 'rjsx-mode-hook 'eslintd-fix-mode)
 
 (defvar js-fontlock-keywords `(("\\(function *\\)[(|[[:space:]]]?"
                                 (0 (progn (compose-region (match-beginning 1)
@@ -34,4 +33,14 @@
 
 (add-hook 'js2-mode-hook
           (lambda ()
-            (font-lock-add-keywords nil js-fontlock-keywords)))
+            (font-lock-add-keywords nil js-fontlock-keywords))
+          'eslintd-fix-mode
+          #'rainbow-delimiters-mode)
+
+(add-hook 'rjsx-mode-hook
+          'eslintd-fix-mode
+          #'rainbow-delimiters-mode)
+
+(use-package jest
+  :hook js2-mode-hook
+  :bind (("C-c , v" . jest-file)))

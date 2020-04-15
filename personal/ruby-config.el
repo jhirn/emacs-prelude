@@ -2,7 +2,7 @@
 (require 'ruby-mode)
 (require 'robe)
 (require 'rspec-mode)
-
+(require 'enh-ruby-mode)
 
 (add-to-list 'auto-mode-alist '("\\.irbrc" . ruby-mode))
 
@@ -13,6 +13,11 @@
 
 (setq ruby-insert-encoding-magic-comment nil
       ruby-deep-indent-paren nil)
+(setq enh-ruby-bounce-deep-indent nil
+      enh-ruby-deep-indent-construct nil
+ enh-ruby-deep-indent-paren nil)
+
+
 
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
@@ -22,10 +27,10 @@
             (remove-hook 'completion-at-point-functions
                          'robe-complete-at-point t)))
 
-(add-hook 'ruby-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-backends)
-                 (remq 'company-capf company-backends))))
+;; (add-hook 'ruby-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'company-backends)
+;;                  (remq 'company-capf company-backends))))
 
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
