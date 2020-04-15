@@ -13,16 +13,21 @@
         company-inf-ruby
         enh-ruby-mode
         eslintd-fix
+        fish-mode
+        graphql-mode
+        helm-ag
         helm-company
         helm-rails
-        helm-ag
-        fish-mode
+        multiple-cursors
+        rainbow-delimiters
+        rainbow-mode
         rjsx-mode
         robe
         rspec-mode
         rubocop
-        window-number
-        multiple-cursors))
+        terraform-mode
+        window-number))
+
 
 (defun install-package (package min-version)
   (unless (package-installed-p package min-version)
