@@ -1,7 +1,7 @@
 ;;(require 'prelude)
+(evil-mode 0)
 
 ;;Apple, think different
-(evil-mode 0)
 (setq
  ns-command-modifier   'meta            ; Apple/Command key is Meta
  ns-alternate-modifier 'super           ; Option is the Mac Option key
@@ -66,9 +66,14 @@
   (interactive)
   (set-font-size 140))
 
-(defun set-font-home-tuple ()
+(defun set-font-junze ()
+  (interactive)
+  (set-font-size 140))
+
+(defun set-font-sammy ()
   (interactive)
   (set-font-size 250))
+
 (defun set-font-projector ()
    (interactive)
   (set-font-size 300))
@@ -230,7 +235,7 @@ KEY must be given in `kbd' notation."
 (setq window-combination-resize t)
 (setq confirm-kill-emacs 'y-or-n-p)
 
-(set-font-mba)
+(set-font-home)
 
 
 (setq undo-tree-visualizer-timestamps 't)
@@ -249,4 +254,4 @@ KEY must be given in `kbd' notation."
 ;;                       (buffer-face-set '(:background "#111"))))))
 ;;   (buffer-face-set 'default))
 
-;; (add-hook 'buffer-list-update-hook 'highlight-selected-window)
+;(add-hook 'buffer-list-update-hook 'highlight-selected-window)

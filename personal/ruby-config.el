@@ -6,10 +6,15 @@
 
 (add-to-list 'auto-mode-alist '("\\.irbrc" . ruby-mode))
 
+;; (setq rspec-autosave-buffer t
+;;       rspec-spec-command "bin/rspec"
+;;       rspec-use-spring-when-possible nil
+;;       rspec-use-bundler-when-possible nil)
+
 (setq rspec-autosave-buffer t
-      rspec-spec-command "bin/rspec"
+      rspec-spec-command "spring rspec"
       rspec-use-spring-when-possible nil
-      rspec-use-bundler-when-possible nil)
+      rspec-use-bundler-when-possible t)
 
 (setq ruby-insert-encoding-magic-comment nil
       ruby-deep-indent-paren nil)

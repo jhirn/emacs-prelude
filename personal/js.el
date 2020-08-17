@@ -11,7 +11,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("components\\/.*\\.js[x]?\\'" . rjsx-mode))
-
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . tid))
 
 
 (defvar js-fontlock-keywords `(("\\(function *\\)[(|[[:space:]]]?"

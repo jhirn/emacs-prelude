@@ -1,6 +1,6 @@
 ;;package-manager
 (require 'package)
-(package-initialize)
+;(package-initialize)
 
 (unless package-archive-contents
   (package-refresh-contents))
@@ -26,7 +26,8 @@
         rspec-mode
         rubocop
         terraform-mode
-        window-number))
+        window-number
+        use-package))
 
 
 (defun install-package (package min-version)

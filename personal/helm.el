@@ -5,7 +5,7 @@
 (require 'helm-net)
 
 (setq helm-completion-style 'emacs)
-(setq completion-styles '(helm-flex))
+(setq completion-styles '(flex))
 
 (require 'helm-projectile)
 (helm-projectile-on)
